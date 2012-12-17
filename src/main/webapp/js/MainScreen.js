@@ -14,7 +14,7 @@
             postDisplay:function (data, config) {
                 var view = this;
                 var $e = view.$el;
-                //brite.display("Contacts");
+                brite.display("Contacts");
                 brite.display("Groups");
             },
             events:{
