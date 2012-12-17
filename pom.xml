@@ -1,0 +1,126 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.xpgcwang</groupId>
+	<artifactId>xpGCWang</artifactId>
+	<packaging>war</packaging>
+	<version>0.1</version>
+	<name>xpGCWang</name>
+	<url>http://maven.apache.org</url>
+
+	<!-- test -->
+	<build>
+		<finalName>xpGCWang</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>utf8</encoding>
+				</configuration>
+			</plugin>
+
+			<!-- Copy war files to ../war -->
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.4</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<configuration>
+							<tasks>
+								<mkdir dir="../war"/>
+								<delete includeemptydirs="true">
+									<fileset dir="../war" includes="**/*" excludes=".git/"/>
+								</delete>
+								<copy todir="../war">
+									<fileset dir="target/xpGCWang"/>
+								</copy>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- /Copy war files to ../war -->
+		</plugins>
+
+	</build>
+	<dependencies>
+		<!-- Provided Dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- /Provided Dependencies -->
+
+		<!-- Snow -->
+		<dependency>
+			<groupId>com.britesnow</groupId>
+			<artifactId>snow</artifactId>
+			<version>2.0.0-SNAPSHOT</version>
+		</dependency>
+		<!-- /Snow -->
+		<!-- http -->
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<!-- /http -->
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.4</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+
+		<!-- /Logging -->
+
+		<!-- Generic Type Workaround -->
+		<!-- Note: probably should be move to snow -->
+		<dependency>
+			<groupId>com.googlecode.gentyref</groupId>
+			<artifactId>gentyref</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>13.0</version>
+		</dependency>
+		<!-- /Generic Type Workaround -->
+
+		<!-- javasimon -->
+		<dependency>
+			<groupId>org.javasimon</groupId>
+			<artifactId>javasimon-core</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+		<!-- /javasimon -->
+	</dependencies>
+	<repositories>
+		<repository>
+			<id>Sonatype Snapshot</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</repository>
+	</repositories>
+</project>
