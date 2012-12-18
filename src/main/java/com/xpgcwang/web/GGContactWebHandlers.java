@@ -52,6 +52,7 @@ public class GGContactWebHandlers {
         if(etag!=null){
             setEtag(etag.getValue().toString(),rc);
         }
+        System.out.println(response);
     }
 
     @WebModelHandler(startsWith = "/getContact")
@@ -80,29 +81,37 @@ public class GGContactWebHandlers {
 
     @WebActionHandler
     public Object saveContact(@WebModel Map m, @WebParam("id") String id, @WebParam("name") String name,
-                            @WebParam("email") String email, RequestContext rc) {
+                            @WebParam("email") String email,@WebParam("groupIds") String groupIdsStr, RequestContext rc) {
         String token = rc.getUser(String.class);
         PostMethod method = null;
 
         StringBuilder xml = new StringBuilder();
-        xml.append("<atom:entry xmlns:atom='http://www.w3.org/2005/Atom'" + " xmlns:gd='http://schemas.google.com/g/2005'>"
+        xml.append("<atom:entry xmlns:atom='http://www.w3.org/2005/Atom'" + " xmlns:gContact='http://schemas.google.com/contact/2008'  xmlns:gd='http://schemas.google.com/g/2005'>"
                                 + " <atom:category scheme='http://schemas.google.com/g/2005#kind'"
                                 + " term='http://schemas.google.com/contact/2008#contact'/>");
-        if (name != null) {
-            xml.append("<atom:title type='text'>"+name+"</atom:title>");
-        }
-
-        if (email != null) {
-            xml.append("<gd:email rel='http://schemas.google.com/g/2005#work' primary='true' address='"+email+"' />");
-        }
-        xml.append("</atom:entry>");
+        
         if (id == null || "".equals(id)) {
             method = new PostMethod(GG_URL);
         } else {
             method = new PostMethod(GG_URL + "/" + id);
             method.addRequestHeader("If-Match", "*");
             method.addRequestHeader("X-HTTP-Method-Override", "PUT");
+            xml.append("<id>http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/base/"+id+"</id>");
         }
+        if (name != null) {
+            xml.append("<title>"+name+"</title>");
+        }
+
+        if (email != null) {
+            xml.append("<gd:email rel='http://schemas.google.com/g/2005#work' primary='true' address='"+email+"' />");
+        }
+        if(groupIdsStr!=null){
+            String[] groupIds = groupIdsStr.split(",");
+            for(int i=0; i < groupIds.length; i++){
+                xml.append("<gContact:groupMembershipInfo deleted='false' href='"+groupIds[i]+"'/>");
+            }
+        }
+        xml.append("</atom:entry>");
         try {
             method.addRequestHeader("Authorization", "Bearer " + token);
             method.addRequestHeader("GData-Version", "3.0");

@@ -39,6 +39,16 @@ public class GoogleXMLUtils {
                 map.put("name", nameObj == null ? "" : nameObj.getNodeValue());
                 Node emailObj = element.getElementsByTagName("gd:email").item(0).getAttributes().getNamedItem("address");
                 map.put("email", emailObj == null ? "" : emailObj.getNodeValue());
+                
+                List groupIds = new ArrayList();
+                NodeList gnodes = element.getElementsByTagName("gContact:groupMembershipInfo");
+                if(gnodes != null){
+                    for(int j = 0; j < gnodes.getLength(); j++){
+                        String groupId = gnodes.item(j).getAttributes().getNamedItem("href").getNodeValue();
+                        groupIds.add(groupId);
+                    }
+                }
+                map.put("groupIds", groupIds);
                 list.add(map);
             }
         } catch (Exception e) {

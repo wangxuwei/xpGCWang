@@ -1,121 +1,46 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearchrss/1.0/' xmlns:gContact='http://schemas.google.com/contact/2008' xmlns:batch='http://schemas.google.com/gdata/batch' xmlns:gd='http://schemas.google.com/g/2005'>
+<feed xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearch/1.1/' xmlns:gContact='http://schemas.google.com/contact/2008' xmlns:batch='http://schemas.google.com/gdata/batch' xmlns:gd='http://schemas.google.com/g/2005' gd:etag='W/&quot;C0MEQnoyeCt7I2A9WhNWGEw.&quot;'>
 	<id>wangxuwei84@gmail.com</id>
-	<updated>2012-12-14T09:47:37.181Z</updated>
+	<updated>2012-12-18T06:16:43.490Z</updated>
 	<category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#contact'/>
-	<title type='text'>xuwei wang's Contacts</title>
+	<title>xuwei wang's Contacts</title>
 	<link rel='alternate' type='text/html' href='http://www.google.com/'/>
 	<link rel='http://schemas.google.com/g/2005#feed' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full'/>
 	<link rel='http://schemas.google.com/g/2005#post' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full'/>
 	<link rel='http://schemas.google.com/g/2005#batch' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/batch'/>
-	<link rel='self' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full?max-results=25'/>
+	<link rel='self' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full?max-results=25&amp;group=http%3A%2F%2Fwww.google.com%2Fm8%2Ffeeds%2Fgroups%2Fwangxuwei84%2540gmail.com%2Fbase%2Fb583ddd0970b838'/>
 	<author>
 		<name>xuwei wang</name>
 		<email>wangxuwei84@gmail.com</email>
 	</author>
 	<generator version='1.0' uri='http://www.google.com/m8/feeds'>Contacts</generator>
-	<openSearch:totalResults>10</openSearch:totalResults>
+	<openSearch:totalResults>2</openSearch:totalResults>
 	<openSearch:startIndex>1</openSearch:startIndex>
 	<openSearch:itemsPerPage>25</openSearch:itemsPerPage>
-	<entry>
-		<id>http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/base/2b4a7f458dd66789</id>
-		<updated>2012-09-03T15:31:59.696Z</updated>
+	<entry gd:etag='&quot;SHg8eTVSLyt7I2A9WhNWGEwLRAE.&quot;'>
+		<id>http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/base/52a3ec0f8994a265</id>
+		<updated>2012-12-18T06:15:59.671Z</updated>
+		<app:edited xmlns:app='http://www.w3.org/2007/app'>2012-12-18T06:15:59.671Z</app:edited>
 		<category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#contact'/>
-		<title type='text'>southgate</title>
-		<link rel='http://schemas.google.com/contacts/2008/rel#edit-photo' type='image/*' href='http://www.google.com/m8/feeds/photos/media/wangxuwei84%40gmail.com/2b4a7f458dd66789/1B2M2Y8AsgTpgAmY7PhCfg'/>
-		<link rel='self' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/2b4a7f458dd66789'/>
-		<link rel='edit' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/2b4a7f458dd66789/1346686319696001'/>
-		<gd:email rel='http://schemas.google.com/g/2005#other' address='southgate@qq.com' primary='true'/>
+		<title></title>
+		<link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*' href='http://www.google.com/m8/feeds/photos/media/wangxuwei84%40gmail.com/52a3ec0f8994a265'/>
+		<link rel='self' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/52a3ec0f8994a265'/>
+		<link rel='edit' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/52a3ec0f8994a265'/>
+		<gd:email rel='http://schemas.google.com/g/2005#work' address='asdf@asdf.com' primary='true'/>
+		<gContact:groupMembershipInfo deleted='false' href='http://www.google.com/m8/feeds/groups/wangxuwei84%40gmail.com/base/6'/>
+		<gContact:groupMembershipInfo deleted='false' href='http://www.google.com/m8/feeds/groups/wangxuwei84%40gmail.com/base/b583ddd0970b838'/>
 	</entry>
-	<entry>
-		<id>http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/base/2f6ccb5b0ef48349</id>
-		<updated>2012-01-16T12:34:08.308Z</updated>
+	<entry gd:etag='&quot;SHg8eTVSLyt7I2A9WhNWGEwLRAE.&quot;'>
+		<id>http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/base/7e2f47d6081e2b30</id>
+		<updated>2012-12-18T06:15:59.671Z</updated>
+		<app:edited xmlns:app='http://www.w3.org/2007/app'>2012-12-18T06:15:59.671Z</app:edited>
 		<category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#contact'/>
-		<title type='text'>Biju Thomas</title>
-		<link rel='http://schemas.google.com/contacts/2008/rel#edit-photo' type='image/*' href='http://www.google.com/m8/feeds/photos/media/wangxuwei84%40gmail.com/2f6ccb5b0ef48349/1B2M2Y8AsgTpgAmY7PhCfg'/>
-		<link rel='self' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/2f6ccb5b0ef48349'/>
-		<link rel='edit' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/2f6ccb5b0ef48349/1326717248308001'/>
-		<gd:email rel='http://schemas.google.com/g/2005#other' address='biju@totient.co.in' primary='true'/>
-	</entry>
-	<entry>
-		<id>http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/base/4688de9e89d8ce0d</id>
-		<updated>2012-04-11T05:51:52.076Z</updated>
-		<category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#contact'/>
-		<title type='text'>Jeremy Chone</title>
-		<link rel='http://schemas.google.com/contacts/2008/rel#edit-photo' type='image/*' href='http://www.google.com/m8/feeds/photos/media/wangxuwei84%40gmail.com/4688de9e89d8ce0d/EMDBDvFEOOLxhv6o_zjCEg'/>
-		<link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*' href='http://www.google.com/m8/feeds/photos/media/wangxuwei84%40gmail.com/4688de9e89d8ce0d'/>
-		<link rel='self' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/4688de9e89d8ce0d'/>
-		<link rel='edit' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/4688de9e89d8ce0d/1334123512076001'/>
-		<gd:email rel='http://schemas.google.com/g/2005#other' address='jeremy.chone@gmail.com' primary='true'/>
-	</entry>
-	<entry>
-		<id>http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/base/492b4bc40be078c6</id>
-		<updated>2012-01-11T10:04:24.949Z</updated>
-		<category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#contact'/>
-		<title type='text'>gaobin</title>
-		<link rel='http://schemas.google.com/contacts/2008/rel#edit-photo' type='image/*' href='http://www.google.com/m8/feeds/photos/media/wangxuwei84%40gmail.com/492b4bc40be078c6/1B2M2Y8AsgTpgAmY7PhCfg'/>
-		<link rel='self' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/492b4bc40be078c6'/>
-		<link rel='edit' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/492b4bc40be078c6/1326276264949003'/>
-		<gd:email rel='http://schemas.google.com/g/2005#other' address='bin_gao@live.cn' primary='true'/>
-	</entry>
-	<entry>
-		<id>http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/base/51dfbcf688857e5d</id>
-		<updated>2012-01-12T05:35:19.373Z</updated>
-		<category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#contact'/>
-		<title type='text'>Wang Xuwei</title>
-		<link rel='http://schemas.google.com/contacts/2008/rel#edit-photo' type='image/*' href='http://www.google.com/m8/feeds/photos/media/wangxuwei84%40gmail.com/51dfbcf688857e5d/1B2M2Y8AsgTpgAmY7PhCfg'/>
-		<link rel='self' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/51dfbcf688857e5d'/>
-		<link rel='edit' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/51dfbcf688857e5d/1326346519373001'/>
-		<gd:email rel='http://schemas.google.com/g/2005#other' address='wangxuwei84@gmail.com' primary='true'/>
-	</entry>
-	<entry>
-		<id>http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/base/5b62b8cd8f96cab4</id>
-		<updated>2012-02-24T09:12:27.623Z</updated>
-		<category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#contact'/>
-		<title type='text'>zhe</title>
-		<link rel='http://schemas.google.com/contacts/2008/rel#edit-photo' type='image/*' href='http://www.google.com/m8/feeds/photos/media/wangxuwei84%40gmail.com/5b62b8cd8f96cab4/1B2M2Y8AsgTpgAmY7PhCfg'/>
-		<link rel='self' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/5b62b8cd8f96cab4'/>
-		<link rel='edit' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/5b62b8cd8f96cab4/1330074747623001'/>
-		<gd:email rel='http://schemas.google.com/g/2005#other' address='li.zhe197@gmail.com' primary='true'/>
-	</entry>
-	<entry>
-		<id>http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/base/645abae68d5866aa</id>
-		<updated>2012-01-09T01:28:13.714Z</updated>
-		<category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#contact'/>
-		<title type='text'></title>
-		<link rel='http://schemas.google.com/contacts/2008/rel#edit-photo' type='image/*' href='http://www.google.com/m8/feeds/photos/media/wangxuwei84%40gmail.com/645abae68d5866aa/1B2M2Y8AsgTpgAmY7PhCfg'/>
-		<link rel='self' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/645abae68d5866aa'/>
-		<link rel='edit' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/645abae68d5866aa/1326072493714001'/>
-		<gd:email rel='http://schemas.google.com/g/2005#other' address='xuely83@hotmail.com' primary='true'/>
-	</entry>
-	<entry>
-		<id>http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/base/6f4818e409ac67f9</id>
-		<updated>2012-09-03T15:31:59.696Z</updated>
-		<category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#contact'/>
-		<title type='text'>woofgl</title>
-		<link rel='http://schemas.google.com/contacts/2008/rel#edit-photo' type='image/*' href='http://www.google.com/m8/feeds/photos/media/wangxuwei84%40gmail.com/6f4818e409ac67f9/1B2M2Y8AsgTpgAmY7PhCfg'/>
-		<link rel='self' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/6f4818e409ac67f9'/>
-		<link rel='edit' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/6f4818e409ac67f9/1346686319696001'/>
-		<gd:email rel='http://schemas.google.com/g/2005#other' address='woofgl@gmail.com' primary='true'/>
-	</entry>
-	<entry>
-		<id>http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/base/7bd7012188dd7bfb</id>
-		<updated>2012-02-14T09:13:48.057Z</updated>
-		<category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#contact'/>
-		<title type='text'>hong</title>
-		<link rel='http://schemas.google.com/contacts/2008/rel#edit-photo' type='image/*' href='http://www.google.com/m8/feeds/photos/media/wangxuwei84%40gmail.com/7bd7012188dd7bfb/1B2M2Y8AsgTpgAmY7PhCfg'/>
-		<link rel='self' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/7bd7012188dd7bfb'/>
-		<link rel='edit' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/7bd7012188dd7bfb/1329210828057002'/>
-		<gd:email rel='http://schemas.google.com/g/2005#other' address='th.swby@gmail.com' primary='true'/>
-	</entry>
-	<entry>
-		<id>http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/base/7d640e688ae009ab</id>
-		<updated>2010-09-23T09:44:28.138Z</updated>
-		<category scheme='http://schemas.google.com/g/2005#kind' term='http://schemas.google.com/contact/2008#contact'/>
-		<title type='text'></title>
-		<link rel='http://schemas.google.com/contacts/2008/rel#edit-photo' type='image/*' href='http://www.google.com/m8/feeds/photos/media/wangxuwei84%40gmail.com/7d640e688ae009ab/1B2M2Y8AsgTpgAmY7PhCfg'/>
-		<link rel='self' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/7d640e688ae009ab'/>
-		<link rel='edit' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/7d640e688ae009ab/1285235068138000'/>
-		<gd:email rel='http://schemas.google.com/g/2005#other' address='20042726@163.com' primary='true'/>
+		<title></title>
+		<link rel='http://schemas.google.com/contacts/2008/rel#photo' type='image/*' href='http://www.google.com/m8/feeds/photos/media/wangxuwei84%40gmail.com/7e2f47d6081e2b30'/>
+		<link rel='self' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/7e2f47d6081e2b30'/>
+		<link rel='edit' type='application/atom+xml' href='http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/full/7e2f47d6081e2b30'/>
+		<gd:email rel='http://schemas.google.com/g/2005#work' address='asdf@asdf.com' primary='true'/>
+		<gContact:groupMembershipInfo deleted='false' href='http://www.google.com/m8/feeds/groups/wangxuwei84%40gmail.com/base/6'/>
+		<gContact:groupMembershipInfo deleted='false' href='http://www.google.com/m8/feeds/groups/wangxuwei84%40gmail.com/base/b583ddd0970b838'/>
 	</entry>
 </feed>

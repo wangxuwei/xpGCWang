@@ -21,8 +21,21 @@
 			} else {
 				dfd.resolve({});
 			}
-			dfd.done(function(contact) {
-				console.log(contact);
+			
+			
+			$.when(dfd,app.actions.listGroups()).done(function(contact,groupsObj) {
+				var groupList = groupsObj.result;
+				if(contact.groupIds){
+					for(var i = 0; i < groupList.length; i++){
+						for(var j = 0; j < contact.groupIds.length; j++){
+							if(groupList[i].fullId == contact.groupIds[j]){
+								groupList[i].selected = true;
+								break;
+							}
+						}
+					}
+				}
+				contact.groupList = groupList;
 				view.contactId = contact.id || null;
 				var $html = app.render("#tmpl-ContactInfo",contact);
 				//show a screen to prevent use click other places
@@ -59,9 +72,18 @@
 
 		var name = $e.find("input[name='name']").val();
 		var email = $e.find("input[name='email']").val();
-
+		var groupIds = "";
+		$e.find("input[name='groupId']:checked").each(function(i,obj){
+			if(i != 0){
+				groupIds += ",";
+			}
+			groupIds += $(this).val();
+		console.log(i);
+		console.log($(this).val());
+		});
+		console.log(groupIds);
 		// if contact id exist do update,else do create
-		app.actions.saveContact(view.contactId, name,email).done(function() {
+		app.actions.saveContact(view.contactId, name,email,groupIds).done(function() {
 			$(document).trigger("DO_REFRESH_CONTACT");
 			view.close();
 		}); 

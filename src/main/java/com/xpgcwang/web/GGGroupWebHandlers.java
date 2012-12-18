@@ -82,7 +82,7 @@ public class GGGroupWebHandlers {
                                     "<atom:category scheme='http://schemas.google.com/g/2005#kind' "
                                 + " term='http://schemas.google.com/contact/2008#group'/>");
         if (name != null) {
-            xml.append("<title type='text'>" + name + "</title>");
+            xml.append("<atom:title type='text'>" + name + "</atom:title>");
         }
 
         xml.append("</atom:entry>");

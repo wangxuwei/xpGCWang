@@ -18,6 +18,14 @@
 						<input type='text' name="email" value="{{email}}" />
 					</div>
 				</div>
+				<div class="control-group">
+					<div class="control-label">Groups:</div>
+					<div class="controls">
+					{{#each groupList}}
+						<input type='checkbox' name="groupId" value="{{fullId}}" {{#if selected}}checked{{/if}}/>{{name}}<br/>
+					{{/each}}
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="ContactInfo-footer modal-footer">
