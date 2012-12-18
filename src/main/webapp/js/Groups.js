@@ -41,7 +41,8 @@
             		var view = this;
             		var $el = view.$el;
             		var $btn = $(e.currentTarget);
-            		var id = $btn.bEntity().id;
+            		var id = $btn.closest(".trow").attr("data-entity-fullId");
+            		console.log(id);
             		brite.display("Contacts",null,{groupId:id});
             	},
             },

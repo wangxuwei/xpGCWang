@@ -89,8 +89,8 @@ public class GGGroupWebHandlers {
             method.addRequestHeader("If-Match", "*");
         }
         try {
-            method.addRequestHeader("Authorization", "Bearer " + token);
             method.addRequestHeader("GData-Version", "3.0");
+            method.addRequestHeader("Authorization", "Bearer " + token);
             method.setRequestEntity(new StringRequestEntity(xml.toString(), "application/atom+xml", "UTF-8"));
             String response = Client.send(method);
         } catch (Exception e) {

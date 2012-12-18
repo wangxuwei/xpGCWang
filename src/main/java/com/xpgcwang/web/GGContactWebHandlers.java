@@ -1,5 +1,6 @@
 package com.xpgcwang.web;
 
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,7 +35,7 @@ public class GGContactWebHandlers {
         String token = rc.getUser(String.class);
         String url = GG_URL;
         if(groupId != null){
-            url = url + "?group="+"Family";
+            url = url + "?group="+URLEncoder.encode(groupId);
         }
         HttpMethod method = new GetMethod(url);
         method.addRequestHeader("GData-Version", "3.0");
