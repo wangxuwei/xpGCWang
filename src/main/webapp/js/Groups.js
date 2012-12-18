@@ -67,7 +67,13 @@
         			var obj = list[i];
         			obj.index = i+1;
         			obj.type="Group";
-        			console.log(list);
+        			obj.show = false;
+        			var name = obj.name;
+        			if(typeof name == 'undefined' || name == null || name == "" || name.indexOf("System") != 0){
+        				obj.show = true;
+        			}else{
+        				obj.name = obj.name.replace("System Group:","");
+        			}
         			var $item = app.render("#tmpl-Groups-rowItem",obj);
         			$tbody.append($item);
         		}
