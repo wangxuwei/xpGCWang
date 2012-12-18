@@ -44,7 +44,9 @@ public class GGGroupWebHandlers {
         List groups = GoogleXMLUtils.parseGroups(response);
         m.put("result", groups);
         Header etag = method.getResponseHeader("ETag");
-        setEtag(etag.getValue().toString(), rc);
+        if(etag!=null){
+            setEtag(etag.getValue().toString(),rc);
+        }
     }
 
     @WebModelHandler(startsWith = "/getGroup")
@@ -64,8 +66,10 @@ public class GGGroupWebHandlers {
             group = (Map) groups.get(0);
         }
         m.put("result", group);
-        //Header etag = method.getResponseHeader("ETag");
-        //setEtag(etag.getValue().toString(), rc);
+        Header etag = method.getResponseHeader("ETag");
+        if(etag!=null){
+            setEtag(etag.getValue().toString(),rc);
+        }
     }
 
     @WebActionHandler
@@ -78,7 +82,7 @@ public class GGGroupWebHandlers {
                                     "<atom:category scheme='http://schemas.google.com/g/2005#kind' "
                                 + " term='http://schemas.google.com/contact/2008#group'/>");
         if (name != null) {
-            xml.append("<atom:title type='text'>" + name + "</atom:title>");
+            xml.append("<title type='text'>" + name + "</title>");
         }
 
         xml.append("</atom:entry>");
@@ -87,6 +91,7 @@ public class GGGroupWebHandlers {
         } else {
             method = new PostMethod(GG_URL + "/" + id);
             method.addRequestHeader("If-Match", "*");
+            method.addRequestHeader("X-HTTP-Method-Override", "PUT");
         }
         try {
             method.addRequestHeader("GData-Version", "3.0");
@@ -97,7 +102,9 @@ public class GGGroupWebHandlers {
             e.printStackTrace();
         }
         Header etag = method.getResponseHeader("ETag");
-        setEtag(etag.getValue().toString(), rc);
+        if(etag!=null){
+            setEtag(etag.getValue().toString(),rc);
+        }
         return null;
     }
 
@@ -116,7 +123,9 @@ public class GGGroupWebHandlers {
             e.printStackTrace();
         }
         Header etag = method.getResponseHeader("ETag");
-        setEtag(etag.getValue().toString(), rc);
+        if(etag!=null){
+            setEtag(etag.getValue().toString(),rc);
+        }
         return null;
     }
 

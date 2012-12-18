@@ -49,7 +49,9 @@ public class GGContactWebHandlers {
         List contacts = GoogleXMLUtils.parseContacts(response);
         m.put("result", contacts);
         Header etag = method.getResponseHeader("ETag");
-        setEtag(etag.getValue().toString(),rc);
+        if(etag!=null){
+            setEtag(etag.getValue().toString(),rc);
+        }
     }
 
     @WebModelHandler(startsWith = "/getContact")
@@ -58,19 +60,22 @@ public class GGContactWebHandlers {
         HttpMethod method = new GetMethod(GG_URL + "/" + id);
         method.addRequestHeader("Authorization", "Bearer " + token);
         String response = null;
+        List contacts = null;
         try {
             response = Client.send(method);
+            contacts = GoogleXMLUtils.parseContacts(response);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        List contacts = GoogleXMLUtils.parseContacts(response);
         Map contact = new HashMap();
         if (contacts != null && contacts.size() > 0) {
             contact = (Map) contacts.get(0);
         }
         m.put("result", contact);
         Header etag = method.getResponseHeader("ETag");
-        setEtag(etag.getValue().toString(),rc);
+        if(etag!=null){
+            setEtag(etag.getValue().toString(),rc);
+        }
     }
 
     @WebActionHandler
@@ -96,6 +101,7 @@ public class GGContactWebHandlers {
         } else {
             method = new PostMethod(GG_URL + "/" + id);
             method.addRequestHeader("If-Match", "*");
+            method.addRequestHeader("X-HTTP-Method-Override", "PUT");
         }
         try {
             method.addRequestHeader("Authorization", "Bearer " + token);
@@ -106,7 +112,9 @@ public class GGContactWebHandlers {
             e.printStackTrace();
         }
         Header etag = method.getResponseHeader("ETag");
-        setEtag(etag.getValue().toString(),rc);
+        if(etag!=null){
+            setEtag(etag.getValue().toString(),rc);
+        }
         return null;
     }
 
@@ -125,7 +133,9 @@ public class GGContactWebHandlers {
             e.printStackTrace();
         }
         Header etag = method.getResponseHeader("ETag");
-        setEtag(etag.getValue().toString(),rc);
+        if(etag!=null){
+            setEtag(etag.getValue().toString(),rc);
+        }
         return null;
     }
     

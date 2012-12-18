@@ -1,13 +1,13 @@
-<script id="tmpl-GroupInfo" type="text/html">
-	<div class="GroupInfo modal">
-		<div class="GroupInfo-header modal-header">
+<script id="tmpl-ContactInfo" type="text/html">
+	<div class="ContactInfo modal">
+		<div class="ContactInfo-header modal-header">
 			<div class="close btnClose"><i class="icon-remove"></i></div>
-			<h3>{{#if id}}Update{{else}}Create{{/if}} Group</h3>
+			<h3>{{#if id}}Update{{else}}Create{{/if}} Contact</h3>
 		</div>
-		<div class="GroupInfo-content modal-body">
+		<div class="ContactInfo-content modal-body">
 			<div class="form-horizontal">
 				<div class="control-group">
-					<div class="control-label">Group name:</div>
+					<div class="control-label">Contact name:</div>
 					<div class="controls">
 						<input type='text' name="name" value="{{name}}" />
 					</div>
@@ -20,7 +20,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="GroupInfo-footer modal-footer">
+		<div class="ContactInfo-footer modal-footer">
 			<div class="btn btn-primary btnCreate">Save</div>
 			<div class="btn btnClose">Close</div>
 		</div>
