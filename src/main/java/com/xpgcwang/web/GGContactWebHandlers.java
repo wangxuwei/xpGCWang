@@ -52,7 +52,6 @@ public class GGContactWebHandlers {
         if(etag!=null){
             setEtag(etag.getValue().toString(),rc);
         }
-        System.out.println(response);
     }
 
     @WebModelHandler(startsWith = "/getContact")
@@ -80,8 +79,8 @@ public class GGContactWebHandlers {
     }
 
     @WebActionHandler
-    public Object saveContact(@WebModel Map m, @WebParam("id") String id, @WebParam("name") String name,
-                            @WebParam("email") String email,@WebParam("groupIds") String groupIdsStr, RequestContext rc) {
+    public Object saveContact(@WebModel Map m, @WebParam("id") String id,@WebParam("fullId") String fullId, @WebParam("name") String name,
+                            @WebParam("email") String email,@WebParam("groupIds") String groupIdsStr,@WebParam("deleteIds") String deleteIdsStr, RequestContext rc) {
         String token = rc.getUser(String.class);
         PostMethod method = null;
 
@@ -96,21 +95,28 @@ public class GGContactWebHandlers {
             method = new PostMethod(GG_URL + "/" + id);
             method.addRequestHeader("If-Match", "*");
             method.addRequestHeader("X-HTTP-Method-Override", "PUT");
-            xml.append("<id>http://www.google.com/m8/feeds/contacts/wangxuwei84%40gmail.com/base/"+id+"</id>");
+            xml.append("<id>"+fullId+"</id>");
         }
         if (name != null) {
-            xml.append("<title>"+name+"</title>");
+            xml.append("<title type='text'>"+name+"</title>");
+            xml.append("<gd:name><gd:fullName>"+name+"</gd:fullName></gd:name>");
         }
 
         if (email != null) {
             xml.append("<gd:email rel='http://schemas.google.com/g/2005#work' primary='true' address='"+email+"' />");
         }
-        if(groupIdsStr!=null){
+        if(groupIdsStr!=null && !"".equals(groupIdsStr)){
             String[] groupIds = groupIdsStr.split(",");
             for(int i=0; i < groupIds.length; i++){
                 xml.append("<gContact:groupMembershipInfo deleted='false' href='"+groupIds[i]+"'/>");
             }
         }
+//        if(deleteIdsStr!=null && !"".equals(deleteIdsStr)){
+//            String[] groupIds = deleteIdsStr.split(",");
+//            for(int i=0; i < groupIds.length; i++){
+//                xml.append("<gContact:groupMembershipInfo deleted='true' href='"+groupIds[i]+"'/>");
+//            }
+//        }
         xml.append("</atom:entry>");
         try {
             method.addRequestHeader("Authorization", "Bearer " + token);

@@ -33,6 +33,7 @@ public class GoogleXMLUtils {
                 Map map = new HashMap();
                 Element element = (Element) nl.item(i);
                 String id = element.getElementsByTagName("id").item(0).getFirstChild().getNodeValue();
+                map.put("fullId", id);
                 id = id.substring(id.lastIndexOf("/") + 1,id.length());
                 map.put("id", id);
                 Node nameObj = element.getElementsByTagName("title").item(0).getFirstChild();
