@@ -136,7 +136,6 @@ public class GGContactWebHandlers {
     @WebActionHandler
     public Object deleteContact(@WebModel Map m, @WebParam("id") String id, RequestContext rc) {
         String token = rc.getUser(String.class);
-        String etagStr = getEtag(rc);
         PostMethod method = new PostMethod(GG_URL + "/" + id);
         method.addRequestHeader("GData-Version", "3.0");
         method.addRequestHeader("If-Match", "*");
@@ -157,9 +156,9 @@ public class GGContactWebHandlers {
     private void setEtag(String etags,RequestContext rc){
         rc.setCookie("etag", etags);
     }
-    private String getEtag(RequestContext rc){
-        String etag = rc.getCookie("etag");
-        etag = etag.replaceAll("&quot;", "\"");
-        return etag;
-    }
+//    private String getEtag(RequestContext rc){
+//        String etag = rc.getCookie("etag");
+//        etag = etag.replaceAll("&quot;", "\"");
+//        return etag;
+//    }
 }

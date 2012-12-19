@@ -21,6 +21,7 @@ public class OAuthManager {
                                                                          + GG_CLIENT_SEC
                                                                          + "&redirect_uri="
                                                                          + GG_CALLBACK_URL
+                                                                         + "&access_type=offline"
                                                                          + "&scope=http://www.google.com/m8/feeds/";
     private static final String GG_TOKEN_URL     = "https://accounts.google.com/o/oauth2/token";
 
