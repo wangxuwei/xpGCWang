@@ -15,7 +15,7 @@ public class OAuthManager {
     
     private static final String GG_CLIENT_ID     = "933291900481.apps.googleusercontent.com";
     private static final String GG_CLIENT_SEC    = "TGlst95iUS_PoUbDei4q2zB0";
-    private static final String GG_CALLBACK_URL  = "http://www.google.com/oauth2callback";
+    private static final String GG_CALLBACK_URL  = "http://localhost:8080/gc/callback";
     private static final String GG_AUTHORIZE_URL = "https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=" + GG_CLIENT_ID
                                                                          + "&client_serect="
                                                                          + GG_CLIENT_SEC

@@ -3,12 +3,12 @@ var app = app || {};
 	app.oauth = {};
 	
 	app.oauth.authorize = function(service){
-		window.open(contextPath+"/authorize.json?service="+service);
+		return window.showModalDialog(contextPath+"/authorize.json?service="+service);
 	}
 	
-	app.oauth.setToken = function(code,service){
+	app.oauth.setToken = function(paramsStr,service){
 		var params = {mehotd:"POST"};
-		params.params = "code="+code;
+		params.params = paramsStr;
 		params.service = service;
 		return app.getJsonData(contextPath+"/setToken.do",params);
 	}

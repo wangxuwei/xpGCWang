@@ -23,14 +23,10 @@
 		events : {
 	 		"btap; .btnAuth": function(){
 	 			var view = this;
-	 			app.oauth.authorize(view.service);
-	 		}, 
-	 		"btap; .btnClose": function(){
-	 			var view = this;
-	 			view.close();
-	 		}, 
-	 		"btap; .btnSave": function(){
-	 			saveToken.call(this);
+	 			var str = app.oauth.authorize(view.service);
+	 			if(str == "DONE_TOKEN_SAVE"){
+	 				window.location = contextPath + "/";
+	 			}
 	 		}
 		},
 
@@ -42,20 +38,5 @@
 			view.$screen.remove();
 		},
 	});
-
-	// --------- View Private Methods --------- //
-	function saveToken() {
-		var view = this;
-		var $e = view.$el;
-		var code = $e.find("input[name='code']").val();
-		app.oauth.setToken(code,view.service).done(function() {
-			view.close();
-			window.location = contextPath + "/";
-		}); 
-
-
-	}
-
-	// --------- /View Private Methods --------- //
 
 })();
