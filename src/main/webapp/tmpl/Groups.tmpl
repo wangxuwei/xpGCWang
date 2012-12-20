@@ -1,5 +1,6 @@
 <script id="tmpl-Groups" type="text/html">
     <div class="Groups">
+    	<h2>Groups</h2>
     	<div>
     		<span class="btn btnAdd"><i class="icon-plus"></i>Add Group</span>
     	</div>
@@ -7,7 +8,7 @@
 	        <div class="thead">
 	          <div class="trow">
 	          	<div class="tcell">Name</div>
-	          	<div class="tcell">Action</div>
+	          	<div class="tcell"></div>
 	          </div>
 	        </div>
 	        <div class="tbody lists">
@@ -20,8 +21,8 @@
 	     <div class="tcell item">{{name}}</div>
 	     <div class="tcell">
 	     	{{#if show}}
-	     	<span class="btn btnEdit"><i title="Edit" class="icon-pencil"></i> Edit</span>
-	     	<span class="btn btn-danger btnDelete"><i title="Delete" class="icon-trash"></i> Delete</span>
+	     	<span class="btn btnEdit" title="Edit"><i title="Edit" class="icon-pencil"></i></span>
+	     	<span class="btn btn-danger btnDelete"  title="Delete"><i title="Delete" class="icon-trash"></i></span>
 	     	{{/if}}
 	     </div>
      </div>
