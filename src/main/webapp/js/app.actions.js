@@ -12,14 +12,13 @@ var app = app || {};
 		params.id = id;
 		return app.getJsonData(contextPath+"/getContact.json",params);
 	}
-	app.actions.saveContact = function(id,fullId,name,email,groupIds,deleteIds){
+	app.actions.saveContact = function(id,fullId,name,email,groupIds){
 		var params = {mehotd:"Post"};
 		params.id = id;
 		params.fullId = fullId;
 		params.name = name;
 		params.email = email;
 		params.groupIds = groupIds;
-		params.deleteIds = deleteIds;
 		return app.getJsonData(contextPath+"/saveContact.do",params);
 	}
 	app.actions.deleteContact = function(id){

@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HttpMethod;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
@@ -43,10 +42,6 @@ public class GGGroupWebHandlers {
         }
         List groups = GoogleXMLUtils.parseGroups(response);
         m.put("result", groups);
-        Header etag = method.getResponseHeader("ETag");
-        if(etag!=null){
-            setEtag(etag.getValue().toString(),rc);
-        }
     }
 
     @WebModelHandler(startsWith = "/getGroup")
@@ -66,10 +61,6 @@ public class GGGroupWebHandlers {
             group = (Map) groups.get(0);
         }
         m.put("result", group);
-        Header etag = method.getResponseHeader("ETag");
-        if(etag!=null){
-            setEtag(etag.getValue().toString(),rc);
-        }
     }
 
     @WebActionHandler
@@ -97,13 +88,9 @@ public class GGGroupWebHandlers {
             method.addRequestHeader("GData-Version", "3.0");
             method.addRequestHeader("Authorization", "Bearer " + token);
             method.setRequestEntity(new StringRequestEntity(xml.toString(), "application/atom+xml", "UTF-8"));
-            String response = Client.send(method);
+            Client.send(method);
         } catch (Exception e) {
             e.printStackTrace();
-        }
-        Header etag = method.getResponseHeader("ETag");
-        if(etag!=null){
-            setEtag(etag.getValue().toString(),rc);
         }
         return null;
     }
@@ -111,7 +98,6 @@ public class GGGroupWebHandlers {
     @WebActionHandler
     public Object deleteGroup(@WebModel Map m, @WebParam("id") String id, RequestContext rc) {
         String token = rc.getUser(String.class);
-//        String etagStr = getEtag(rc);
         PostMethod method = new PostMethod(GG_URL + "/" + id);
         method.addRequestHeader("GData-Version", "3.0");
         method.addRequestHeader("If-Match", "*");
@@ -122,20 +108,7 @@ public class GGGroupWebHandlers {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Header etag = method.getResponseHeader("ETag");
-        if(etag!=null){
-            setEtag(etag.getValue().toString(),rc);
-        }
         return null;
     }
 
-    private void setEtag(String etags, RequestContext rc) {
-        rc.setCookie("etag", etags);
-    }
-
-//    private String getEtag(RequestContext rc) {
-//        String etag = rc.getCookie("etag");
-//        etag = etag.replaceAll("&quot;", "\"");
-//        return etag;
-//    }
 }

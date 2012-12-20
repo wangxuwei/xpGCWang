@@ -75,38 +75,15 @@
 		var name = $e.find("input[name='name']").val();
 		var email = $e.find("input[name='email']").val();
 		var groupIds = "";
-		var gIds = [];
 		$e.find("input[name='groupId']:checked").each(function(i,obj){
 			if(i != 0){
 				groupIds += ",";
 			}
 			groupIds += $(this).val();
-			gIds.push($(this).val());
 		});
-		var dIds = [];
-		for(var i = 0; i < view.groupIds.length; i++){
-			var deleteId = true;
-			for(var j = 0; j < gIds.length; j++){
-				if(gIds[j] == view.groupIds[i]){
-					deleteId = false;
-					break;
-				}
-			}
-			if(deleteId){
-				dIds.push(view.groupIds[i]);
-			}
-		}
-		
-		var dIdsStr = "";
-		for(var i = 0; i < dIds.length; i++){
-			if(i != 0){
-				dIdsStr += ",";
-			}
-			dIdsStr += dIds[i];
-		}
 		
 		// if contact id exist do update,else do create
-		app.actions.saveContact(view.contactId,view.contactFullId, name,email,groupIds,dIdsStr).done(function() {
+		app.actions.saveContact(view.contactId,view.contactFullId, name,email,groupIds).done(function() {
 			$(document).trigger("DO_REFRESH_CONTACT");
 			view.close();
 		}); 

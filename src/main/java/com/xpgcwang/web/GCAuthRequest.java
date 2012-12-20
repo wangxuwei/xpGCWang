@@ -28,10 +28,9 @@ public class GCAuthRequest implements AuthRequest {
             HttpMethod method = new GetMethod(url);
             method.addRequestHeader("GData-Version", "3.0");
             method.addRequestHeader("Authorization", "Bearer " + token);
-            String response = null;
             AuthToken<String> authToken = new AuthToken<String>();
             try {
-                response = Client.send(method);
+                Client.send(method);
                 authToken.setUser(userIdStr);
             }catch(Exception e){
                 if(e.getMessage().indexOf("401") == 0){

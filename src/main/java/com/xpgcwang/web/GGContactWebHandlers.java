@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HttpMethod;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
@@ -48,10 +47,6 @@ public class GGContactWebHandlers {
         }
         List contacts = GoogleXMLUtils.parseContacts(response);
         m.put("result", contacts);
-        Header etag = method.getResponseHeader("ETag");
-        if(etag!=null){
-            setEtag(etag.getValue().toString(),rc);
-        }
     }
 
     @WebModelHandler(startsWith = "/getContact")
@@ -72,15 +67,11 @@ public class GGContactWebHandlers {
             contact = (Map) contacts.get(0);
         }
         m.put("result", contact);
-        Header etag = method.getResponseHeader("ETag");
-        if(etag!=null){
-            setEtag(etag.getValue().toString(),rc);
-        }
     }
 
     @WebActionHandler
     public Object saveContact(@WebModel Map m, @WebParam("id") String id,@WebParam("fullId") String fullId, @WebParam("name") String name,
-                            @WebParam("email") String email,@WebParam("groupIds") String groupIdsStr,@WebParam("deleteIds") String deleteIdsStr, RequestContext rc) {
+                            @WebParam("email") String email,@WebParam("groupIds") String groupIdsStr, RequestContext rc) {
         String token = rc.getUser(String.class);
         PostMethod method = null;
 
@@ -111,24 +102,14 @@ public class GGContactWebHandlers {
                 xml.append("<gContact:groupMembershipInfo deleted='false' href='"+groupIds[i]+"'/>");
             }
         }
-//        if(deleteIdsStr!=null && !"".equals(deleteIdsStr)){
-//            String[] groupIds = deleteIdsStr.split(",");
-//            for(int i=0; i < groupIds.length; i++){
-//                xml.append("<gContact:groupMembershipInfo deleted='true' href='"+groupIds[i]+"'/>");
-//            }
-//        }
         xml.append("</atom:entry>");
         try {
             method.addRequestHeader("Authorization", "Bearer " + token);
             method.addRequestHeader("GData-Version", "3.0");
             method.setRequestEntity(new StringRequestEntity(xml.toString(),"application/atom+xml", "UTF-8"));
-            String response = Client.send(method);
+            Client.send(method);
         } catch (Exception e) {
             e.printStackTrace();
-        }
-        Header etag = method.getResponseHeader("ETag");
-        if(etag!=null){
-            setEtag(etag.getValue().toString(),rc);
         }
         return null;
     }
@@ -146,19 +127,7 @@ public class GGContactWebHandlers {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Header etag = method.getResponseHeader("ETag");
-        if(etag!=null){
-            setEtag(etag.getValue().toString(),rc);
-        }
         return null;
     }
     
-    private void setEtag(String etags,RequestContext rc){
-        rc.setCookie("etag", etags);
-    }
-//    private String getEtag(RequestContext rc){
-//        String etag = rc.getCookie("etag");
-//        etag = etag.replaceAll("&quot;", "\"");
-//        return etag;
-//    }
 }
